@@ -101,6 +101,10 @@ func NewInputField() *InputField {
 
 // SetText sets the current text of the input field.
 func (i *InputField) SetText(text string) *InputField {
+	if i.text == text {
+		return i
+	}
+
 	i.text = text
 
 	// If the new text is shorter than previous, set cursor to end
